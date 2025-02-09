@@ -8,7 +8,7 @@ vercel のビルド時、prisma generate && prisma db push コマンドの実行
 Can't reach database server at `aws-0-us-west-1.pooler.supabase.com:5432`
 ```
 
-デプロイを頻繁に（prisma generate && prisma db push 実行を頻繁に）行うとこのエラーになることから、supabase の接続制限がかけられているのかもしれないと考え、以下の todo で解消できるか試していく
+デプロイを頻繁に（prisma generate && prisma db push 実行を頻繁に）行うとこのエラーになることから、supabase の接続制限がかけられているのかもしれないと考え、以下の todo で解消できるか試していく。
 
 ## デプロイ手法に関する todo
 
@@ -31,3 +31,10 @@ client を理解する（無駄なインスタンスが生成されることの�
 上記の変更をした上で、デプロイ（というか prisma generate && prisma db push を実行）を行うとデータをもつ既存 DB の行末はどうなるか検証
 
 --accept-data-loss の必要な時・不必要な時・使うべきでない時も検証したい
+
+## 資料ストア
+
+https://supabase.com/docs/guides/database/connection-management
+
+https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections#prevent-hot-reloading-from-creating-new-instances-of-prismaclient
+
