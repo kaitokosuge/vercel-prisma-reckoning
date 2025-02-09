@@ -20,6 +20,7 @@ model Post {
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
+  @@map(name: "posts")
 }
 
 model User {
@@ -30,4 +31,10 @@ model User {
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
   posts         Post[]
   @@map(name: "users")
+}
+
+model Tag {
+  id        String     @default(cuid()) @id
+  title     String
+  @@map(name: "tags")
 }
