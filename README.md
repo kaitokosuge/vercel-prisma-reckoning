@@ -5,6 +5,7 @@
 vercel のビルド時、prisma generate && prisma db push コマンドの実行で DB と接続できず以下のエラーに、、
 
 ```
+PrismaClientInitializationError
 Can't reach database server at `aws-0-us-west-1.pooler.supabase.com:5432`
 ```
 
@@ -37,4 +38,3 @@ client を理解する（無駄なインスタンスが生成されることの�
 https://supabase.com/docs/guides/database/connection-management
 
 https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections#prevent-hot-reloading-from-creating-new-instances-of-prismaclient
-
