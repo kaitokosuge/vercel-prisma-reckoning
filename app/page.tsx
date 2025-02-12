@@ -5,7 +5,36 @@ export default async function Home() {
 	console.log("user", users);
 	const posts = await prisma.post.findMany();
 	console.log("posts", posts);
-	const res = await fetch("http://localhost:3000/api/user", {
+	const tags = await prisma.tag.findMany();
+	console.log("tags", tags);
+	const tagByWhere = await prisma.tag.findMany({
+		where: {
+			title: "",
+		},
+	});
+	console.log("絞り込みtags", tagByWhere);
+	const postByWhere = await prisma.post.findMany({
+		where: {
+			title: "",
+		},
+	});
+	console.log("絞り込みposts", postByWhere);
+
+	const userByWhere = await prisma.user.findMany({
+		where: {
+			name: "hello",
+		},
+	});
+	console.log("userByWhere", userByWhere);
+
+	const userByWhereId = await prisma.user.findUnique({
+		where: {
+			id: "hello",
+		},
+	});
+	console.log("userByWhere", userByWhereId);
+
+	const res = await fetch("http://localhost:3001/api/user", {
 		method: "GET",
 	});
 	if (!res.ok) {
