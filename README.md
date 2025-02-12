@@ -38,3 +38,7 @@ client を理解する（無駄なインスタンスが生成されることの�
 https://supabase.com/docs/guides/database/connection-management
 
 https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections#prevent-hot-reloading-from-creating-new-instances-of-prismaclient
+
+pgbouncer に関してわかりやすい
+
+https://devcenter.heroku.com/ja/articles/best-practices-pgbouncer-configuration
